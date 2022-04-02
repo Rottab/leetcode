@@ -21,9 +21,9 @@ public class PalindromeNumber {
 
     @Test
     public void test() {
-        assert isPalindrome(121) == true;
-        assert isPalindrome(-121) == false;
-        assert isPalindrome(1231) == false;
-        assert isPalindrome(1221) == true;
+        assert isPalindrome(121);
+        assert !isPalindrome(-121);
+        assert !isPalindrome(1231);
+        assert isPalindrome(1221);
     }
 }
