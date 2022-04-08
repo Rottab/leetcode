@@ -158,4 +158,77 @@ public class RemoveDuplicatesFromSortedArray {
         }
         System.out.println("\n------");
     }
+
+
+    public int removeDuplicates3(int[] nums) {
+        int size = 0;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[size] < nums[i]){
+                size++;
+                nums[size] = nums[i];
+            }
+        }
+        return size + 1;
+    }
+
+    @Test
+    public void test31() {
+        int[] nums = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
+        int size = removeDuplicates3(nums);
+        System.out.println("Start Size " + nums.length);
+        System.out.println("End Size " + size);
+        for (int i = 0; i < nums.length; i++) {
+            System.out.print(nums[i] + " ");
+        }
+        System.out.println("\n------");
+    }
+
+    @Test
+    public void test32() {
+        int[] nums = {0};
+        int size = removeDuplicates3(nums);
+        System.out.println("Start Size " + nums.length);
+        System.out.println("End Size " + size);
+        for (int i = 0; i < nums.length; i++) {
+            System.out.print(nums[i] + " ");
+        }
+        System.out.println("\n------");
+    }
+
+    @Test
+    public void test33() {
+        int[] nums = {4, 4};
+        int size = removeDuplicates3(nums);
+        System.out.println("Start Size " + nums.length);
+        System.out.println("End Size " + size);
+        for (int i = 0; i < nums.length; i++) {
+            System.out.print(nums[i] + " ");
+        }
+        System.out.println("\n------");
+    }
+
+
+    @Test
+    public void test34() {
+        int[] nums = {3, 3, 3, 3, 3, 3, 3};
+        int size = removeDuplicates3(nums);
+        System.out.println("Start Size " + nums.length);
+        System.out.println("End Size " + size);
+        for (int i = 0; i < nums.length; i++) {
+            System.out.print(nums[i] + " ");
+        }
+        System.out.println("\n------");
+    }
+
+    @Test
+    public void test35() {
+        int[] nums = {4, 5};
+        int size = removeDuplicates3(nums);
+        System.out.println("Start Size " + nums.length);
+        System.out.println("End Size " + size);
+        for (int i = 0; i < nums.length; i++) {
+            System.out.print(nums[i] + " ");
+        }
+        System.out.println("\n------");
+    }
 }
