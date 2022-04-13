@@ -10,7 +10,6 @@ public class PlusOne {
         for (int i = digits.length - 1; i >= 0 && carry != 0; i--) {
             if (++digits[i] == 10) {
                 digits[i] = 0;
-                carry = 1;
             } else carry = 0;
         }
         if (carry > 0) {
