@@ -2,7 +2,6 @@ package com.rottab.s0165;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
