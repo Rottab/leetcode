@@ -1,9 +1,9 @@
 package com.rottab.s0111;
 
+import com.sun.source.tree.Tree;
 import org.junit.jupiter.api.Test;
 
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -62,9 +62,9 @@ public class MinimumDepthOFBinaryTree {
         queue.add(root);
         int depth = 0;
         while (!queue.isEmpty()) {
-            List<TreeNode> level = new LinkedList<>();
-            while (!queue.isEmpty()) level.add(queue.remove());
-            for (TreeNode treeNode : level) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode treeNode = queue.remove();
                 if (treeNode.left == null && treeNode.right == null) return ++depth;
                 if (treeNode.left != null) queue.add(treeNode.left);
                 if (treeNode.right != null) queue.add(treeNode.right);
