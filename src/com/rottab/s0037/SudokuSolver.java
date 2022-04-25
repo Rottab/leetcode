@@ -16,7 +16,7 @@ public class SudokuSolver {
         System.out.println("*********************************");
     }
 
-    public boolean isValidate(char[][] board, int row, int column, char value) {
+    public boolean isValid(char[][] board, int row, int column, char value) {
         int i1 = row - row % 3;
         int e1 = i1 + 3;
         int i2 = column - column % 3;
@@ -38,7 +38,7 @@ public class SudokuSolver {
         if (board[i][j] != '.') return solve(board, p + 1);
         for (int v = 1; v <= board.length; v++) {
             char value = Character.forDigit(v, 10);
-            if (isValidate(board, i, j, value)) {
+            if (isValid(board, i, j, value)) {
                 board[i][j] = value;
                 display(board);
                 if (solve(board, p + 1)) return true;
@@ -121,11 +121,11 @@ public class SudokuSolver {
                 {'.', '.', '.', '4', '1', '9', '.', '.', '5'},
                 {'.', '.', '.', '.', '8', '.', '.', '7', '9'}
         };
-        assertThat(isValidate(board, 3, 3, '3')).isFalse();
-        assertThat(isValidate(board, 3, 3, '9')).isTrue();
-        assertThat(isValidate(board, 7, 7, '8')).isFalse();
-        assertThat(isValidate(board, 7, 7, '3')).isTrue();
-        assertThat(isValidate(board, 1, 1, '3')).isFalse();
-        assertThat(isValidate(board, 1, 1, '2')).isTrue();
+        assertThat(isValid(board, 3, 3, '3')).isFalse();
+        assertThat(isValid(board, 3, 3, '9')).isTrue();
+        assertThat(isValid(board, 7, 7, '8')).isFalse();
+        assertThat(isValid(board, 7, 7, '3')).isTrue();
+        assertThat(isValid(board, 1, 1, '3')).isFalse();
+        assertThat(isValid(board, 1, 1, '2')).isTrue();
     }
 }
