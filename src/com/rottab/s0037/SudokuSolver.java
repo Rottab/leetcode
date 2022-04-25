@@ -31,30 +31,25 @@ public class SudokuSolver {
     }
 
 
-    public boolean solve(char[][] board) {
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board.length; j++) {
-                if (board[i][j] == '.') {
-                    for (int v = 1; v <= board.length; v++) {
-                        char value = Character.forDigit(v, 10);
-                        if (isValidate(board, i, j, value)) {
-                            board[i][j] = value;
-                            if (solve(board)) return true;
-                            board[i][j] = '.';
-                        }
-                    }
-                    display(board);
-                    return false;
-                }
+    public boolean solve(char[][] board, int p) {
+        if (p == board.length * board.length) return true;
+        int i = p / board.length;
+        int j = p % board.length;
+        if (board[i][j] != '.') return solve(board, p + 1);
+        for (int v = 1; v <= board.length; v++) {
+            char value = Character.forDigit(v, 10);
+            if (isValidate(board, i, j, value)) {
+                board[i][j] = value;
+                display(board);
+                if (solve(board, p + 1)) return true;
+                board[i][j] = '.';
             }
         }
-        System.out.println("SOLVED");
-        display(board);
-        return true;
+        return false;
     }
 
     public void solveSudoku(char[][] board) {
-        solve(board);
+        solve(board, 0);
     }
 
     @Test
