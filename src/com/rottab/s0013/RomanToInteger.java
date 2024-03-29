@@ -1,6 +1,6 @@
 package com.rottab.s0013;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.Map;
 import java.util.Stack;

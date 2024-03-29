@@ -1,6 +1,6 @@
 package com.rottab.s0108;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 class TreeNode {
     int val;

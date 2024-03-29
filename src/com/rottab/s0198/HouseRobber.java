@@ -1,6 +1,6 @@
 package com.rottab.s0198;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.stream.IntStream;

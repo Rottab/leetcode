@@ -1,6 +1,6 @@
 package com.rottab.s0053;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import static java.lang.Math.max;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;

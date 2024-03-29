@@ -1,6 +1,6 @@
 package com.rottab.s0027;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 public class RemoveElement {
     public int removeElement(int[] nums, int val) {

@@ -1,6 +1,6 @@
 package com.rottab.s0002;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 
 class ListNode {

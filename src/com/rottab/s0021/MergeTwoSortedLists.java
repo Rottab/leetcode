@@ -1,6 +1,6 @@
 package com.rottab.s0021;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 public class MergeTwoSortedLists {
     class ListNode {

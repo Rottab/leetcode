@@ -1,6 +1,6 @@
 package com.rottab.s0051;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.LinkedList;
 import java.util.List;

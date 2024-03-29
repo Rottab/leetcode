@@ -1,6 +1,6 @@
 package com.rottab.s0009;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import static java.lang.Math.abs;
 
