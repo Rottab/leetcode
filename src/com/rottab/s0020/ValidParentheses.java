@@ -13,8 +13,8 @@ public class ValidParentheses {
 
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            if (stack.isEmpty()) stack.push(c);
-            else if (c == '(' || c == '[' || c == '{') {
+            if (stack.isEmpty() && (c == ')' || c == ']' || c == '}')) return false;
+            if (c == '(' || c == '[' || c == '{') {
                 stack.push(c);
             } else if (c == ')') {
                 if (stack.pop() != '(') return false;
