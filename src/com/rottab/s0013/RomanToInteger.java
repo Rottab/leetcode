@@ -5,6 +5,8 @@ import org.junit.Test;
 import java.util.Map;
 import java.util.Stack;
 
+import static org.junit.Assert.assertEquals;
+
 public class RomanToInteger {
     public int romanToInt1(String s) {
         Map<Character, Integer> map = Map
@@ -57,6 +59,27 @@ public class RomanToInteger {
         return sum;
     }
 
+    public int romanToInt3(String s) {
+        Map<Character, Integer> map = Map
+                .of('I', 1,
+                        'V', 5,
+                        'X', 10,
+                        'L', 50,
+                        'C', 100,
+                        'D', 500,
+                        'M', 1000);
+        int sum = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (i + 1 < s.length() && map.get(s.charAt(i)) < map.get(s.charAt(i + 1))) {
+                sum -= map.get(s.charAt(i));
+            }
+            else {
+                sum += map.get(s.charAt(i));
+            }
+        }
+        return sum;
+    }
+
     @Test
     public void test1() {
         assert romanToInt1("I") == 1;
@@ -79,5 +102,17 @@ public class RomanToInteger {
         assert romanToInt2("VI") == 6;
         assert romanToInt2("LVIII") == 58;
         assert romanToInt2("MCMXCIV") == 1994;
+    }
+
+    @Test
+    public void test3() {
+        assertEquals(1, romanToInt3("I"));
+        assertEquals(1100, romanToInt3("MC"));
+        assertEquals(1900, romanToInt3("MCM"));
+        assertEquals(3, romanToInt3("III"));
+        assertEquals(4, romanToInt3("IV"));
+        assertEquals(6, romanToInt3("VI"));
+        assertEquals(58, romanToInt3("LVIII"));
+        assertEquals(1994, romanToInt3("MCMXCIV"));
     }
 }
